@@ -55,7 +55,7 @@ class AuthRepository {
 
       if (e.type == DioExceptionType.connectionError) {
         throw Exception(
-          'No se pudo conectar con Confypim. Comprueba que XAMPP esté iniciado.',
+          'No se pudo conectar con Confypim. Comprueba tu conexión a Internet e inténtalo nuevamente.',
         );
       }
 
@@ -105,7 +105,7 @@ class AuthRepository {
 
       if (e.type == DioExceptionType.connectionError) {
         throw Exception(
-          'No se pudo conectar con Confypim. Comprueba que XAMPP esté iniciado.',
+          'No se pudo conectar con Confypim. Comprueba tu conexión a Internet e inténtalo nuevamente.',
         );
       }
 

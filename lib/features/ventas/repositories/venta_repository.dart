@@ -178,7 +178,7 @@ class VentaRepository {
 
     if (error.type == DioExceptionType.connectionError) {
       return 'No se pudo conectar con Confypim. '
-          'Comprueba que XAMPP esté iniciado.';
+          'Comprueba tu conexión a Internet e inténtalo nuevamente.';
     }
 
     return 'Error de comunicación con el servidor.';

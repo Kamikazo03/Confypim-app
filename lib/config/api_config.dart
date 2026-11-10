@@ -1,7 +1,7 @@
 class ApiConfig {
   ApiConfig._();
 
-  // Servidor remoto de producción en Railway.
+  // Dirección del servidor remoto de producción en Railway.
   static const String baseUrl = 'https://confypim.up.railway.app/';
 
   // Endpoints existentes del proyecto PHP.
