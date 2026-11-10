@@ -25,8 +25,7 @@ environment:
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
+# the latest version available on pub.dev.
 dependencies:
   flutter:
     sdk: flutter
@@ -44,11 +43,12 @@ dev_dependencies:
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  # encourage good coding practices. The lint set is activated in the
+  # analysis_options.yaml file located at the root of your package.
+  # See that file for information about deactivating specific lint rules and
+  # activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -57,9 +57,13 @@ dev_dependencies:
 flutter:
 
   # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  # included with your application. This is required to use the
+  # material Icons class.
   uses-material-design: true
+
+  # Register the Confypim logo displayed on the login screen.
+  assets:
+    - assets/images/confypim_logo_login.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -91,3 +95,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+# Generate Android launcher icons (legacy + adaptive).
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icon/confypim_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#F8F5F2"
+  adaptive_icon_foreground: "assets/icon/confypim_adaptive_foreground.png"
+  adaptive_icon_foreground_inset: 0

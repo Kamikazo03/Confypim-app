@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.fromLTRB(24, 8, 24, 20),
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 430),
               child: AnimatedBuilder(
@@ -83,39 +83,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const SizedBox(height: 28),
-
                       // Identidad de la aplicación.
-                      Container(
-                        alignment: Alignment.center,
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryLight,
-                            borderRadius: BorderRadius.circular(26),
-                          ),
-                          child: const Icon(
-                            Icons.cake_outlined,
-                            size: 48,
-                            color: AppColors.primaryDark,
-                          ),
+                      Center(
+                        child: Image.asset(
+                          'assets/images/confypim_logo_login.png',
+                          width: 170,
+                          height: 220,
+                          fit: BoxFit.contain,
+                          semanticLabel: 'Confypim',
                         ),
                       ),
 
-                      const SizedBox(height: 22),
-
-                      const Text(
-                        'Confypim',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.text,
-                        ),
-                      ),
-
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
 
                       const Text(
                         'Gestión de tu negocio, en un solo lugar.',
@@ -126,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
 
-                      const SizedBox(height: 36),
+                      const SizedBox(height: 20),
 
                       // Formulario.
                       Container(
@@ -321,10 +300,7 @@ class _LoginScreenState extends State<LoginScreen> {
 class InicioPruebaScreen extends StatelessWidget {
   final UsuarioModel usuario;
 
-  const InicioPruebaScreen({
-    super.key,
-    required this.usuario,
-  });
+  const InicioPruebaScreen({super.key, required this.usuario});
 
   Future<void> _cerrarSesion(BuildContext context) async {
     try {
@@ -334,9 +310,7 @@ class InicioPruebaScreen extends StatelessWidget {
     if (!context.mounted) return;
 
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(
-        builder: (_) => const LoginScreen(),
-      ),
+      MaterialPageRoute(builder: (_) => const LoginScreen()),
       (route) => false,
     );
   }
@@ -344,9 +318,7 @@ class InicioPruebaScreen extends StatelessWidget {
   void _abrirVentas(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => const VentasScreen(),
-      ),
+      MaterialPageRoute(builder: (_) => const VentasScreen()),
     );
   }
 
@@ -371,9 +343,9 @@ class InicioPruebaScreen extends StatelessWidget {
         children: [
           Text(
             '¡Bienvenida!',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.w800,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 8),
           Text(
